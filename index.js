@@ -13,6 +13,11 @@ const removeLoading = () => {
     }
   }, 500);
 }
+const removeCustomError = () =>{
+  window.onload(() => {
+    myError.textContent = ""
+  })
+  }
 
 const loading = () =>{
   if(myType.textContent === ""){
@@ -38,7 +43,7 @@ async function jokeApi() {
         return response;
     }
     catch(error){
-        myError.textContent = "Failed to load, Please check your internet connection, and try again."
+        myError.textContent = "Failed to load, Please check your internet connection, and try again"
     myLoading.textContent = ""
     }
 }
@@ -47,4 +52,5 @@ button.addEventListener('click', () => {
       loading();
      jokeApi();
      removeLoading();
+     removeCustomError();
 });
