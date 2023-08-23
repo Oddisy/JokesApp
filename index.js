@@ -4,11 +4,23 @@ const mySetup = document.querySelector('.setup');
 const button = document.querySelector('button');
  const myPunchline = document.querySelector('.punchline');
  const myError = document.querySelector(".error")
-//  function to remove error from the dom 
-const removeError = () => {
+ const myLoading = document.querySelector(".loading")
+
+const removeLoading = () => {
   setInterval(() => {
-    myError.textContent = "";
-  }, 4000);
+    if(myType.textContent !== ""){
+      myLoading.style.display = "none"
+    }
+  }, 500);
+}
+
+const loading = () =>{
+  if(myType.textContent === ""){
+myLoading.textContent = "loading..."
+myError.textContent = ""
+  }else{
+  removeLoading()
+  }
 }
 // The link of the API endpoint to fetch a random joke
 const apiUrl = "https://official-joke-api.appspot.com/random_joke";
@@ -26,11 +38,13 @@ async function jokeApi() {
         return response;
     }
     catch(error){
-        myError.textContent = "Failed to load, try again later"
+        myError.textContent = "Failed to load, Please check your internet connection, and try again."
+    myLoading.textContent = ""
     }
 }
 
-button.addEventListener('click', () => { 
+button.addEventListener('click', () => {
+      loading();
      jokeApi();
-     removeError()
+     removeLoading();
 });
