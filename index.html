@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main container for all content in the webpage -->
+    <div class="main-container">
+    <h1>Joke App</h1>
+    <button>Click here to get random Jokes</button>
+            <!--Jokes display Container  -->
+    <div class="display-container">
+            <!-- individual joke container -->
+        <div class="display">
+                <!-- Joke type Child div -->
+        <div class="display-child"><p class="type"></p> </div>
+                <!-- Joke setup div -->
+        <div class="display-child"> <p class="setup"></p> </div>
+                <!-- Joke punchline div -->
+        <div class="display-child"><p class="punchline"></p> </div>
+                <!-- error message placeholder-->
+        <span class="error"></span>
+        </div>
+    </div>
+    <!--including javascript for functionality -->
+    <script src="./index.js"></script>
+</body>
+</html>
