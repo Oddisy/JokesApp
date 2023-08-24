@@ -16,7 +16,7 @@ const removeLoading = () => {
 const removeCustomError = () =>{
     myError.textContent = ""
   }
-  // document.addEventListener("DOMContentLoaded", )
+  document.addEventListener("DOMContentLoaded", removeLoading )
 
 const loading = () =>{
   if(myType.textContent === ""){
