@@ -14,10 +14,9 @@ const removeLoading = () => {
   }, 500);
 }
 const removeCustomError = () =>{
-  window.onload(() => {
     myError.textContent = ""
-  })
   }
+  // document.addEventListener("DOMContentLoaded", )
 
 const loading = () =>{
   if(myType.textContent === ""){
@@ -39,6 +38,7 @@ async function jokeApi() {
         mySetup.textContent = response.setup
         myPunchline.textContent = response.punchline
         console.log(myType.innerHtml)
+        removeCustomError()
         // return Api response
         return response;
     }
@@ -52,5 +52,4 @@ button.addEventListener('click', () => {
       loading();
      jokeApi();
      removeLoading();
-     removeCustomError();
 });
