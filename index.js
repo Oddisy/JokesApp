@@ -43,7 +43,7 @@ async function jokeApi() {
         return response;
     }
     catch(error){
-        myError.textContent = "Failed to load, Please check your internet connection, and try again"
+        myError.textContent = "Failed to load, Please check your internet connection, and try again."
     myLoading.textContent = ""
     }
 }
